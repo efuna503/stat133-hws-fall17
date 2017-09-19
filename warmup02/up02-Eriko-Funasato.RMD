@@ -1,0 +1,38 @@
+---
+title: "warmup2"
+author: "Eriko Funasato"
+date: "September 16, 2017"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# load the objects
+load("nba2017-salary-points.RData")
+
+# list the available objects
+ls()
+#quantitative variable
+summary(salary)
+hist(salary)
+boxplot(salary)
+d <- density(frequency)
+plot(d)
+##the typical value in salary is the mean which is 6187014
+##the spread
+range <- max(salary)-min(salary)
+range
+IQR = 9250000-1286160
+sd <- sd(salary)
+variance <- sd^2
+variance
+
+#categorical variable
+factor(position)
+table(position)
+frequency <- table(position)
+rel.frequency <- table(position)/length(position)
+rel.frequency
+barplot(frequency)
