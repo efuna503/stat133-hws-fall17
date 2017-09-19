@@ -1,0 +1,9 @@
+up01
+================
+Eriko Funasato
+September 18, 2017
+
+Cooking Recipe of omelette
+==========================
+
+**ingredients** \* eggs \* oil \* ham \* cheese \* spinach \* katchup **tools used** \* knife \* frypan \* chopsticks \* plate **steps to cook** 1. put the dry frypan on the fire and put in some oil 2. chopped the ham and spinach using the knife 3. as the oil heated, put the chopped ham and spinach into the pan 4. mix the egg well and spread the egg into the pan 5. wait until the egg change from liquid to solid and change its color 6. fold the egg into oval shape 7. pour the cooked egg into the plate and put some katchup by its side *this recipe is good to be used for breakfast in every season*
