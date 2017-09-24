@@ -1,0 +1,116 @@
+---
+title: "hw01"
+author: "Eriko Funasato"
+date: "September 21, 2017"
+output:
+  github_document: default
+  html_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,eval = TRUE)
+```
+
+```{r}
+#load the data
+load("C:/Users/eriko/stat133/stat133-hws-fall17/hw01/data/nba2017-salary-points.RData")
+#list the data
+ls()
+```
+
+
+# 1)a bit of data processing
+```{r}
+millionsalary <- salary*10^-6
+round(millionsalary,digits = 2)
+```
+
+```{r}
+#replace "r" in exp to o
+experience[which(experience=='R')] <- 0
+Experience <- strtoi(experience)
+```
+
+```{r}
+#factor variable position
+Position <- as.factor(position)
+levels(Position)
+Position <- factor(position,labels = c("center","power_fwd","point_guard","small_fwd","small_guard"))
+table(Position)
+```
+
+# 2)scatterplot of points and salary
+```{r}
+plot(points,millionsalary,main = 'Scatterplot of Points and Salary',col='red',xlab = 'Points', ylab='Salary (in millions)',cex.axis=0.8)
+```
+
+# 3)Correlation between points and salary
+```{r}
+n <- length(player)
+xbar <- sum(points)/n
+ybar <- sum(salary)/n
+var_x <- sum((points-xbar)^2)/(n-1)
+var_y <- sum((salary-ybar)^2)/(n-1)
+sd_x <- sqrt(var_x)
+sd_y <- sqrt(var_y)
+cov_xy <- sum((points-xbar)*(salary-ybar))/(n-1)
+cor_xy <- cov_xy/(sd_x*sd_y)
+```
+
+# 4)Simple linear regression
+```{r}
+b1 <- cor_xy * sd_y/sd_x
+b0 <- ybar-b1*xbar
+y_hat <- b0 + b1 * points
+summary(y_hat)
+```
+Y_hat = b0 + b1*x
+```{r}
+
+y_hat[points==0]
+y_hat[points==100]
+y_hat[points==500]
+y_hat[points==1000]
+y_hat[points==2000]
+```
+
+# 5)plotting the regression line
+```{r}
+#add line 
+plot(points,millionsalary,main = 'Scatterplot of Points and Salary',col='dark grey',xlab = 'Points', ylab='Salary (in millions)',cex.axis=0.8)
+abline(lm(millionsalary~points),col='blue')
+lines(lowess(points,millionsalary),col='red')
+text(2000,27,labels = 'lowess',col='red',cex = 0.8)
+text(2000,12,labels = 'regression',cex = 0.8, col='blue')
+```
+
+# 6)regression of residuals and coefficient of determination
+```{r}
+e <- salary - y_hat
+summary(e)
+RSS <- sum(e^2)
+TSS <- sum((salary-ybar)^2)
+coeff_det <- 1-RSS/TSS
+```
+
+# 7)exploring position and experience
+```{r}
+#scatterplot
+plot(Experience,millionsalary,main = 'Scatterplot with lowess smooth',col='dark grey', xlab = 'Years of experience',ylab = 'Salary (in millions)',cex.axis=0.8)
+lines(lowess(Experience,millionsalary),col='red')
+```
+
+```{r}
+#3d scatterplot
+library(scatterplot3d)
+scatterplot3d(points,Experience,millionsalary,xlab = 'Points',ylab = 'experience',zlab = 'Salary(in millions)',main = '3D Scatterplot',color = 'red',cex.axis = 0.8)
+```
+
+```{r}
+#boxplot
+boxplot(millionsalary~Position, xlab='position',ylab='Salary (in millions)',cex.axis=0.8)
+#In the scatterplot, the plot are spreaded very wide and average. though the salary for the experience lower than 3 is low, the graph seems to be uniform.Therefore, the salary doesn't seems to be very related with experience. 
+#the median of the 5 positiona are about the same.But besides the position of center, the rest four all have outliers. And the center seems to have more population above the median. it seems that the position 'center' have more salary.
+```
+
+# 8)Comments and reflection
+The whole process of doing this homework was struggling, but it is eexcited when come out with the right things. The graphing and plotting part took most of the time. I do need help doing this homework, and most of the help are from google and '?'.Though I don't have coding experience,I am now become a little more confident of coding with R studio.Thank you very much!
