@@ -1,0 +1,112 @@
+---
+title: "hw02"
+author: "Eriko Funasato"
+date: "October 2, 2017"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# 2) Import the data in R
+```{r}
+dat1 <- read.csv("~/nba2017-player-statistics.csv",colClasses = c("Player"="character","Team"="character","Experience"="character"))
+str(dat1)
+```
+```{r}
+library(readr)
+dat2 <- read_csv("~/nba2017-player-statistics.csv",col_types = cols("Position"=col_factor(levels = c('C', 'PF', 'PG','SF', 'SG'))))
+str(dat2)
+```
+# 3) Right after importing the data
+```{r}
+dat1$Experience <- as.integer(replace(dat1$Experience,dat1$Experience=="R",0))
+dat1$Experience
+```
+# 4) Performance of players
+```{r}
+#add variables to dat1 
+library(dplyr)
+dat1 <- mutate(dat1,Missed_FG = dat1$FGA-dat1$FGM,
+Missed_FT = dat1$FTA-dat1$FTM,
+PTS = 3*dat1$Points3 + 2*dat1$Points2 + dat1$FTM,
+REB = dat1$OREB + dat1$DREB,
+MPG = dat1$MIN/dat1$GP,EFF = (PTS + REB + AST + STL + BLK - Missed_FG - Missed_FT - TO) / GP)
+dat1
+```
+
+```{r}
+#summary statistic for above
+summary(dat1$EFF)
+```
+```{r}
+#histogram
+hist(dat1$EFF,main = "Histogram of Efficiency(EFF)",xlab = "EEF",col = "dark grey")
+```
+```{r}
+#Display the player name, team, salary, and EFF value of the top-10 players by EFF in decreasing order
+dat3 <- select(slice(arrange(dat1,desc(EFF)),1:10),Player,Team,Salary,EFF)
+dat3
+```
+```{r}
+#Provide the names of the players that have a negative EFF
+select(filter(dat1,EFF<0),Player)
+```
+```{r}
+#Use the function cor() to compute the correlation coefficients between EFF and all the variables used in the EFF formula
+cor(dat1$EFF,dat1$PTS)
+cor(dat1$EFF,dat1$REB)
+cor(dat1$EFF,dat1$AST)
+cor(dat1$EFF,dat1$STL)
+cor(dat1$EFF,dat1$BLK)
+cor(dat1$EFF,-dat1$Missed_FG)
+cor(dat1$EFF,-dat1$Missed_FT)
+cor(dat1$EFF,-dat1$TO)
+```
+```{r}
+#Display the computed correlations in descending order, either in a vector or a dataframe
+Cor <- c(cor(dat1$EFF,dat1$PTS),
+cor(dat1$EFF,dat1$REB),
+cor(dat1$EFF,dat1$AST),
+cor(dat1$EFF,dat1$STL),
+cor(dat1$EFF,dat1$BLK),
+cor(dat1$EFF,-dat1$Missed_FG),
+cor(dat1$EFF,-dat1$Missed_FT),
+cor(dat1$EFF,-dat1$TO))
+sort(Cor,decreasing = TRUE)
+
+```
+```{r}
+barplot(sort(Cor,decreasing = TRUE),main="Correlation between Player stats and EFF",cex.axis = 0.8,col = ifelse(Cor>0,"dark grey","coral1"),names.arg = c("PTS","REB","STL","AST","BLK","Missed_FT","Missed_FG","TO"),cex.names = 0.6,ylim = c(-1,1),border = NA)
+```
+# 5) Efficiency and Salary
+```{r}
+plot(dat1$EFF,dat1$Salary,main = "Scatterplot of efficiency and salary",xlab = "Efficiency",ylab = "Salary",col="green",cex=1)
+lines(lowess(dat1$EFF,dat1$Salary),col='red')
+```
+
+```{r}
+#diaplay linear correlation
+cor(dat1$EFF,dat1$Salary)
+```
+
+```{r}
+# select those players that have an MPG value of 20 or more minutes per game
+#Create a data frame players2 with these players.
+player2 <- filter(dat1,MPG>=20)
+player2
+```
+```{r}
+#Use this data frame to create a scatterplot between Efficiency and Salary, including a lowess smooth line.
+plot(player2$EFF,player2$Salary,main = "Scatterplot of efficiency and salary in player2",xlab = "Efficiency",ylab = "Salary",col="green",cex=1)
+lines(lowess(player2$EFF,player2$Salary),col='red')
+```
+
+```{r}
+#compute correlation
+cor(player2$EFF,player2$Salary)
+```
+For the "more establish players", which are MPG>=20,it seems to be less correlated between efficiency and salary.
+
+# 6)Comments and Reflections
+it took me much time on finding how to use the functions and how to get the result of the requirement. 
