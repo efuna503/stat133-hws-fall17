@@ -1,0 +1,40 @@
+---
+title: "hw03"
+author: "Eriko Funasato"
+date: "October 15, 2017"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#Ranking of Teams
+```{r}
+library(ggplot2)
+#Basic Rankings
+#Use ggplot() to create a barchart (horizontally oriented) The vertical red line is the average team salary.
+ggplot(data=team,aes(x=reorder(team,Salary),y=Salary))+geom_bar(stat='identity',fill='grey')+coord_flip()+geom_hline(aes(yintercept=90.95),col='red')+labs(y="Salary(in millions)")+labs(x="teams")+ggtitle("NBA Teams ranked by Total Salary")
+
+```
+```{r}
+#Create another bar chart of teams ranked by total points. The vertical red line is the average team points
+ggplot(data=team,aes(x=reorder(team,Points),y=Points))+geom_bar(stat='identity',fill='grey')+coord_flip()+geom_hline(aes(yintercept=mean(Points)),col='red')+labs(y="Total Points")+labs(x="teams")+ggtitle("NBA Teams ranked by Total Points")
+```
+```{r}
+#Use efficiency to obtain a third kind of ranking, and create an associated bar chart of teams ranked by total efficiency. The vertical red line is the average team efficiency.
+ggplot(data=team,aes(x=reorder(team,Efficiency),y=Efficiency))+geom_bar(stat='identity',fill='grey')+coord_flip()+geom_hline(aes(yintercept=mean(Efficiency)),col='red')+labs(y="Total Efficiency")+labs(x="teams")+ggtitle("NBA Teams ranked by Total Efficiency")
+```
+
+#Principal Components Analysis (PCA)
+```{r}
+#Index based on PC1
+PC <- prcomp(team[,2:15],scale=TRUE)
+z1 <- PC$x[,1]
+s1 <- 100*(z1-min(z1))/(max(z1)-min(z1))
+#barchart
+ggplot(data=team,aes(x=reorder(team,s1),y=s1))+geom_bar(stat='identity',fill='grey')+coord_flip()+labs(y="first pc(scaled from 0 to 100")+labs(x="teams")+ggtitle("NBA Teams ranked by scaled PC1")
+```
+
+
+
+
