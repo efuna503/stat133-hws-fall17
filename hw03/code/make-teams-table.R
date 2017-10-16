@@ -29,7 +29,7 @@ colnames(dat)[20] <- "free_throws"
 team <- summarize(group_by(dat,team),Experience=round(sum(experience),digits = 2),
                   Salary=sum(round(salary*(10^-6),digits = 2)),
                   Points3=sum(points3_made),Points2=sum(points2_made),
-                  Free_throws=sum(points1_made),Points=sum(points),
+                  Free_throws=sum(free_throws),Points=sum(points),
                   Off_rebounds=sum(off_rebounds),Def_rebounds=sum(def_rebounds),
                   Assists=sum(assists),Steals=sum(steals),Blocks=sum(blocks),
                   Turnovers=sum(turnovers),Fouls=sum(fouls),
