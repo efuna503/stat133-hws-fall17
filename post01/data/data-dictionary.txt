@@ -1,0 +1,15 @@
+Discription of Headers:
+
+Major_code: Major code, FO1DP in ACS PUMS
+Major:	Major description
+Major_category:	Category of major from Carnevale et al
+Total:	Total number of people with major
+Employed:	Number employed (ESR == 1 or 2)
+Full_time:	Employed 35 hours or more
+Part_time:	Employed less than 35 hours
+Full_time_year_round:	Employed at least 50 weeks (WKW == 1) and at least 35 hours (WKHP >= 35)
+Unemployed:	Number unemployed (ESR == 3)
+Unemployment_rate:	Unemployed / (Unemployed + Employed)
+Median:	Median earnings of full-time, year-round workers
+P25th:	25th percentile of earnigns
+P75th:	75th percentile of earnings
