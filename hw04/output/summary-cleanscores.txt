@@ -1,0 +1,221 @@
+'data.frame':	334 obs. of  22 variables:
+ $ HW1     : num  100 85 87.5 92.5 32.5 75 90 92.5 82.5 75 ...
+ $ HW2     : num  100 95 100 100 0 85 100 95 85 95 ...
+ $ HW3     : num  100 100 85 100 65 92.5 97.5 100 92.5 95 ...
+ $ HW4     : num  100 95 70 100 60 95 95 90 70 95 ...
+ $ HW5     : num  100 95 100 96.2 0 ...
+ $ HW6     : num  100 95 98 99 46 91 80 72 0 96 ...
+ $ HW7     : num  100 100 0 100 0 0 52 95 84 0 ...
+ $ HW8     : num  100 100 80 92.5 0 0 90 74.5 90 100 ...
+ $ HW9     : num  100 100 0 95 0 90 90 100 95 98 ...
+ $ ATT     : num  100 100 20 100 0 60 100 100 100 100 ...
+ $ QZ1     : num  12 11 10 8 5 11 11 10 11 7 ...
+ $ QZ2     : num  18 16 10 16 9 17 9 8 18 10 ...
+ $ QZ3     : num  20 18 10 13 0 0 15 12 14 13 ...
+ $ QZ4     : num  20 19 0 13 0 15 18 13 19 16 ...
+ $ EX1     : num  80 57.6 56.8 69.6 40 73.6 78.4 52 80 63.2 ...
+ $ EX2     : num  90 74.7 54.9 58 16.2 ...
+ $ Test1   : num  100 72 71 87 50 92 98 65 100 79 ...
+ $ Test2   : num  100 83 61 64.5 18 79 76.5 71 82 78.5 ...
+ $ Homework:List of 334
+  ..$ : num 100
+  ..$ : Named num 97.5
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 88.6
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 98.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 50.9
+  .. ..- attr(*, "names")= chr "HW6"
+  ..$ : Named num 89.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 90.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 93.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 87.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 93.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 63.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 98.1
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 83
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 85.5
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 95.3
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 64.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 73.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 92.5
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 82.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 82.2
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 99.7
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 95.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 74.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 84.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 92.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 78.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 98.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 92.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 82.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 90.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 91.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 91.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 97.7
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 91.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 73.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 91.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 64
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 90.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 93.1
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 94.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 93.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 91.5
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 86.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 95.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 79.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 79.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 96.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 97
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 99.1
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 95.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 93
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 83.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 84.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 96.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 96.1
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 89.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 97.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 97.1
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 94.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 79.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 98.2
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 92.1
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 91.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 80.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 90.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 88.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 97.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 93.1
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 85.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 79
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 53.1
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 91.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 82.9
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 92.7
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 97.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 64.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 90.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 99.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 96.6
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 90.8
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 87.7
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 89.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 93.1
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 80.7
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 98.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 89.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 86.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 79
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 98.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 96.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 87
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 82.4
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 84.7
+  .. ..- attr(*, "names")= chr "HW8"
+  ..$ : Named num 91.1
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 87.3
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 83.9
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 42.5
+  .. ..- attr(*, "names")= chr "HW4"
+  ..$ : Named num 99.6
+  .. ..- attr(*, "names")= chr "HW9"
+  ..$ : Named num 94.4
+  .. ..- attr(*, "names")= chr "HW9"
+  .. [list output truncated]
+ $ Quiz    : num  19.3 17.7 10 14 7 ...
+ $ Overall : num  87.9 77 59.5 75.2 30.8 ...
+ $ g       : chr  "B+" "C" "D" "C" ...

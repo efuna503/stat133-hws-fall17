@@ -1,0 +1,18 @@
+Remove missing: ..
+Get minimum: ..
+Get maximum: ..
+Get range: ..
+Get median: ..
+Get average: ..
+Get Standard deviation: ..
+Get quartile one: ..
+Get quartile three: ..
+Count missing: ..
+Summary stats: ..
+Rescale: .
+Drop lowest: .
+Score homeworks: ..
+Score quiz: ..
+SCore lab: ...
+
+DONE ========================================================================================
