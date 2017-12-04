@@ -1,0 +1,12 @@
+
+Call:
+arima(x = myts, seasonal = list(order = c(1, 1, 1), period = 12))
+
+Coefficients:
+         sar1     sma1
+      -0.2416  -0.7536
+s.e.   0.0811   0.0744
+
+sigma^2 estimated as 5.587:  log likelihood = -527.05,  aic = 1060.1
+                    ME     RMSE      MAE         MPE     MAPE      MASE      ACF1
+Training set 0.1026845 2.303841 1.768481 -0.09236835 3.800736 0.4094024 0.2646953

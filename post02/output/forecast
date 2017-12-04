@@ -1,0 +1,36 @@
+         Point Forecast    Lo 80    Hi 80    Lo 95    Hi 95
+Jan 1940       39.96709 36.93793 42.99626 35.33438 44.59980
+Feb 1940       39.52311 36.49394 42.55228 34.89040 44.15582
+Mar 1940       42.89968 39.87052 45.92885 38.26697 47.53239
+Apr 1940       46.44401 43.41485 49.47318 41.81130 51.07672
+May 1940       52.61836 49.58920 55.64753 47.98565 57.25107
+function (file = NULL, append = FALSE, type = c("output", "message"), 
+    split = FALSE) 
+{
+    type <- match.arg(type)
+    if (type == "message") {
+        if (is.null(file)) 
+            file <- stderr()
+        else if (!inherits(file, "connection") || !isOpen(file)) 
+            stop("'file' must be NULL or an already open connection")
+        if (split) 
+            stop("cannot split the message connection")
+        .Internal(sink(file, FALSE, TRUE, FALSE))
+    }
+    else {
+        closeOnExit <- FALSE
+        if (is.null(file)) 
+            file <- -1L
+        else if (is.character(file)) {
+            file <- file(file, if (append) 
+                "a"
+            else "w")
+            closeOnExit <- TRUE
+        }
+        else if (!inherits(file, "connection")) 
+            stop("'file' must be NULL, a connection or a character string")
+        .Internal(sink(file, closeOnExit, FALSE, split))
+    }
+}
+<bytecode: 0x000000001486ce90>
+<environment: namespace:base>
