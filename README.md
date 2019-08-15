@@ -1,8 +1,6 @@
-# HW02 -  Basics of Data Frames
+# stat133-computing with data using R
+The purpose of this course is to summarize variables (quantatitative and categorical) graphically and numerically.
 
-The purpose of this HW is to summarize variables (quantatitative and categorical) graphically and numerically.
-
-Modify the content of this file.
 
 - Special instructions for any user (if necessary)
 - Special instructions for graders (if necessary)
